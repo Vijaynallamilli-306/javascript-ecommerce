@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Item Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    /* 🔹 Quantity box styling */
+.quantity {
+  padding: 8px;
+  width: 60px;
+  text-align: center;
+  border: 1px solid #ccc;   /* add full border */
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+/* 🔹 Footer */
+footer {
+  background: #f1f1f1;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  color: #555;
+  border-top: 2px solid #ddd;  /* add top border */
+  margin-top: 40px;
+}
+
+
+    /* 🔹 Header */
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #FFAE5D;
+      padding: 12px 20px;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .item-header .brand {
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+      margin: 0;
+    }
+
+    .item-header a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      font-size: 16px;
+      transition: opacity 0.2s;
+    }
+
+    .item-header a:hover {
+      opacity: 0.8;
+    }
+
+    .cart-icon {
+      font-size: 18px;
+    }
+
+    /* 🔹 Breadcrumbs */
+    .breadcrumbs {
+      font-size: 14px;
+      margin: 20px auto;
+      max-width: 900px;
+      color: #555;
+      padding: 0 15px;
+    }
+
+    .breadcrumbs a {
+      text-decoration: none;
+      color: #FF9800;
+      font-weight: 500;
+    }
+
+    .breadcrumbs a:hover {
+      text-decoration: underline;
+    }
+
+    .breadcrumbs span {
+      color: #333;
+      font-weight: 600;
+    }
+
+    /* 🔹 Item details */
+    .item-details {
+      max-width: 900px;
+      margin: 20px auto 40px;
+      background: #fff;
+      display: flex;
+      gap: 30px;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .item-details img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 8px;
+    }
+
+    .item-info {
+      flex: 1;
+    }
+
+    .item-info h2 {
+      margin: 0 0 10px;
+    }
+
+    .rating {
+      color: #f5a623;
+      margin: 5px 0 15px;
+    }
+
+    .price {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .price-offer {
+      color: green;
+      margin-left: 8px;
+      font-weight: bold;
+    }
+
+    .description {
+      margin: 20px 0;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .features {
+      margin: 15px 0;
+      padding-left: 20px;
+    }
+
+    .features li {
+      margin-bottom: 8px;
+      list-style-type: none;
+    }
+
+    .actions {
+      margin-top: 20px;
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .quantity {
+      padding: 8px;
+      width: 60px;
+      text-align: center;
+    }
+
+    .btn {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .btn-cart {
+      background: #ff9800;
+      color: white;
+    }
+
+    .btn-buy {
+      background: #4caf50;
+      color: white;
+    }
+
+    /* 🔹 Responsive */
+    @media (max-width: 992px) {
+      .item-details {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .item-info {
+        text-align: center;
+      }
+      .actions {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .item-info h2 {
+        font-size: 20px;
+      }
+      .price {
+        font-size: 20px;
+      }
+      .description, .features li {
+        font-size: 14px;
+      }
+      .btn {
+        font-size: 14px;
+        padding: 10px;
+      }
+      .quantity {
+        width: 60px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+ 
+
+  <!-- 🔹 Breadcrumbs -->
+  <nav class="breadcrumbs">
+    <a href="index.html">Home</a> › 
+    <span id="breadcrumb-product">Item</span>
+  </nav>
+
+  <!-- 🔹 Item Details -->
+  <div class="item-details">
+    <img id="item-img" src="" alt="Item">
+
+    <div class="item-info">
+      <h2 id="item-name"></h2>
+      <div class="rating">⭐ 4.5/5 (120 reviews)</div>
+      <div>
+        <span class="price" id="item-price"></span>
+        <span class="price-offer" id="item-offer"></span>
+      </div>
+
+      <p class="description">
+        This is a premium quality product designed to make your life easier. Built with the latest technology and durable materials.
+      </p>
+
+      <ul class="features">
+        <li>✔️ High durability</li>
+        <li>✔️ Energy efficient</li>
+        <li>✔️ Sleek modern design</li>
+        <li>✔️ 1-year warranty</li>
+      </ul>
+
+      <div class="actions">
+        <input type="number" id="quantity" class="quantity" min="1" value="1">
+        <button class="btn btn-cart">🛒 Add to Cart</button>
+        <button class="btn btn-buy">⚡ Buy Now</button>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- 🔹 Script -->
+  <script>
+    const product = JSON.parse(localStorage.getItem("productDetails"));
+    if (product) {
+      document.getElementById("item-img").src = product.img;
+      document.getElementById("item-name").textContent = product.name;
+      document.getElementById("item-price").textContent = product.price;
+      document.getElementById("item-offer").textContent = product.offer ? product.offer : "";
+
+      // update breadcrumbs
+      document.getElementById("breadcrumb-product").textContent = product.name;
+    }
+
+    document.querySelector(".btn-cart").addEventListener("click", () => {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      let qty = parseInt(document.getElementById("quantity").value);
+
+      cart.push({
+        name: product.name,
+        price: parseInt(product.price.replace(/[^0-9]/g, "")), 
+        image: product.img,
+        offer: product.offer ? parseInt(product.offer.replace(/[^0-9]/g, "")) : 0,
+        quantity: qty
+      });
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      window.location.href = "cart.html";
+    });
+
+    document.querySelector(".btn-buy").addEventListener("click", () => {
+      alert("Proceeding to checkout directly...");
+    });
+  </script>
+</body>
+</html>

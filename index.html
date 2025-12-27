@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TokoElektrik</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./CSS/index.css">
+  <link rel="stylesheet" href="./CSS/responsive.css">
+
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      font-family: "Poppins", sans-serif;
+    }
+
+    header,
+    footer {
+      flex-shrink: 0;
+    }
+
+    main,
+    section {
+      flex: 1;
+    }
+
+    footer {
+      margin-top: auto;
+      background: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      border-top: 3px solid #f1c40f;
+    }
+
+    nav ul li a.active {
+      color: #f1c40f;
+      font-weight: bold;
+      border-bottom: 2px solid #f1c40f;
+    }
+
+    .no-results {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 600;
+      color: #555;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="header-con">
+        <h2><b>Toko</b>Elektrik</h2>
+        <div class="signin">
+          <div class="signin-img">
+            <img src="./Images/Sign_In.png" alt="Sign In">
+          </div>
+          <p>Sign In</p>
+        </div>
+      </div>
+      <div class="location-search">
+        <a href="#" class="location-btn">Cirebon 45145</a>
+        <input id="searchBox" placeholder="Search">
+        <a href="cart.html"><i class="fa-solid fa-cart-shopping" style="color: black;"></i></a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="#">Furniture</a></li>
+          <li><a href="#">Electronic</a></li>
+          <li><a href="#">Mobile</a></li>
+          <li><a href="#">Clothing</a></li>
+        </ul>
+      </nav>
+      <div class="menu-toggle">
+        <div class="menu">
+          <i class="fa fa-bars menu-toggles" aria-hidden="true" style="color: white;"></i>
+        </div>
+        <nav>
+          <ul id="nav-menu">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="#">Furniture</a></li>
+            <li><a href="#">Electronic</a></li>
+            <li><a href="#">Mobile</a></li>
+            <li><a href="#">Clothing</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+    <section class="banner">
+        <div class="container">
+            <div class="banner-con">
+
+                <div class="text-offerdeals">
+                    <div class="bann-lft">
+                        <h1 class="light-txt">All You Need Is</h1>
+                        <h1 class="yellow-color-txt">One Shopping</h1>
+                        <h1>Place</h1>
+                    </div>
+                    <div class="offers">
+                        <div class="heading-underline">
+                            <h3>Great Offers</h3>
+                        </div>
+                        <div class="offer-deal-items">
+
+                            <div class="item-individual" data-name="Inalsa Air Fryer-Fry-Light-1400W"
+                                data-price="Rp 20,000" data-offer="14% off"
+                                data-img="./Images/Inalsa_Air_Fryer_Fry_Light_1400W.png">
+                                <div class="item-img">
+                                    <img src="./Images/Inalsa_Air_Fryer_Fry_Light_1400W.png" alt="Item">
+                                </div>
+                                <h4>Inalsa Air Fryer-Fry-Light-1400W</h4>
+                                <span class="price">Rp 20,000</span>
+                                <span class="price-offer">14% off</span>
+                            </div>
+
+                            <div class="item-individual" data-name="Realme Ear Phones" data-price="Rp 10,000"
+                                data-offer="14% off" data-img="./Images/Banner-Ite-1.png">
+                                <div class="item-img">
+                                    <img src="./Images/Banner-Ite-1.png" alt="Item">
+                                </div>
+                                <h4>Realme Ear Phones</h4>
+                                <span class="price">Rp 10,000</span>
+                                <span class="price-offer">14% off</span>
+                            </div>
+
+                            <div class="item-individual" data-name="Stylish Watch" data-price="Rp 50,000"
+                                data-offer="14% off" data-img="./Images/Banner-Item-2.png">
+                                <div class="item-img">
+                                    <img src="./Images/Banner-Item-2.png" alt="Item">
+                                </div>
+                                <h4>Stylish Watch</h4>
+                                <span class="price">Rp 50,000</span>
+                                <span class="price-offer">14% off</span>
+                            </div>
+
+                            <div class="item-individual" data-name="Apple iPhone" data-price="Rp 10,000"
+                                data-offer="14% off" data-img="./Images/Banner-Item-3.png">
+                                <div class="item-img">
+                                    <img src="./Images/Banner-Item-3.png" alt="Item">
+                                </div>
+                                <h4>Apple iPhone</h4>
+                                <span class="price">Rp 10,00</span>
+                                <span class="price-offer">14% off</span>
+                            </div>
+
+                            <div class="item-individual" data-name="Smart TV" data-price="Rp 20,000"
+                                data-offer="14% off" data-img="./Images/Banner-Item-4.png">
+                                <div class="item-img">
+                                    <img src="./Images/Banner-Item-4.png" alt="Item">
+                                </div>
+                                <h4>Smart TV</h4>
+                                <span class="price">Rp 20,000</span>
+                                <span class="price-offer">14% off</span>
+                            </div>
+
+                            <div class="item-individual" data-name="HD Camera" data-price="Rp 30,000"
+                                data-offer="14% off" data-img="./Images/Banner-Item-5.png">
+                                <div class="item-img">
+                                    <img src="./Images/Banner-Item-5.png" alt="Item">
+                                </div>
+                                <h4>HD Camera</h4>
+                                <span class="price">Rp 30,000</span>
+                                <span class="price-offer">14% off</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="banner-img">
+                    <img src="./Images/Echo-Dot.png" alt="Banner-Img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="today-hot-deals">
+        <div class="container">
+            <div class="heading-underline">
+                <h3>Today's Hot Deals</h3>
+            </div>
+            <div class="items-display">
+                <div class="item-individual" data-name="Wireless Mouse" data-price="30000"
+                    data-img="./Images/HotDeals-1.png" data-offer="14% off">
+                    <div class="item-img">
+                        <img src="./Images/HotDeals-1.png" alt="Wireless Mouse">
+                    </div>
+                    <h4>Wireless Mouse</h4>
+                    <span class="price">Rp 30,000</span>
+                    <span class="price-offer">14% off</span>
+                </div>
+                <div class="item-individual" data-name="Redme 15" data-price="30000"
+                    data-img="./Images/Redme15.webp" data-offer="10% off">
+                    <div class="item-img">
+                        <img src="./Images/Redme15.webp" alt="Wireless Mouse">
+                    </div>
+                    <h4>Redme 15</h4>
+                    <span class="price">Rp 30,000</span>
+                    <span class="price-offer">10% off</span>
+                </div>
+
+                <div class="item-individual" data-name="Oppo f27" data-price="30000"
+                    data-img="./Images/Oppo_f27.webp" data-offer="10% off">
+                    <div class="item-img">
+                        <img src="./Images/Oppo_f27.webp" alt="Wireless Mouse">
+                    </div>
+                    <h4>Oppo f27</h4>
+                    <span class="price">Rp 30,000</span>
+                    <span class="price-offer">10% off</span>
+                </div>
+
+                <div class="item-individual" data-name="Lighting Keyboard" data-price="50000"
+                    data-img="./Images/HotDeals-2.png" data-offer="14% off">
+                    <div class="item-img">
+                        <img src="./Images/HotDeals-2.png" alt="Lighting Keyboard">
+                    </div>
+                    <h4>Lighting Keyboard</h4>
+                    <span class="price">Rp 50,000</span>
+                    <span class="price-offer">14% off</span>
+                </div>
+
+                <div class="item-individual" data-name="Headphones" data-price="10000"
+                    data-img="./Images/Search-Items-3.png" data-offer="14% off">
+                    <div class="item-img">
+                        <img src="./Images/Search-Items-3.png" alt="Headphones">
+                    </div>
+                    <h4>Headphones</h4>
+                    <span class="price">Rp 10,000</span>
+                    <span class="price-offer">14% off</span>
+                </div>
+
+                <div class="item-individual" data-name="Ipad & Mobile Combo" data-price="20000"
+                    data-img="./Images/HotDeals-4.png" data-offer="14% off">
+                    <div class="item-img">
+                        <img src="./Images/HotDeals-4.png" alt="Ipad & Mobile Combo">
+                    </div>
+                    <h4>Ipad & Mobile Combo</h4>
+                    <span class="price">Rp 20,000</span>
+                    <span class="price-offer">14% off</span>
+                </div>
+
+                <div class="item-individual" data-name="Microphone & Headphone" data-price="30000"
+                    data-img="./Images/HotDeals-5.png" data-offer="14% off">
+                    <div class="item-img">
+                        <img src="./Images/HotDeals-5.png" alt="Microphone & Headphone">
+                    </div>
+                    <h4>Microphone & Headphone</h4>
+                    <span class="price">Rp 30,000</span>
+                    <span class="price-offer">14% off</span>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <section class="your-searched-items">
+        <div class="container">
+            <div class="heading-underline">
+                <h3>Your Searched Items</h3>
+            </div>
+            <div class="items-display">
+                <div class="item-individual">
+                    <div class="item-img">
+                        <img src="./Images/Search-Items-1.png" alt="Item">
+                    </div>
+                </div>
+                <div class="item-individual">
+                    <div class="item-img">
+                        <img src="./Images/Search-Items-2.png" alt="Item">
+                    </div>
+
+                </div>
+                <div class="item-individual">
+                    <div class="item-img">
+                        <img src="./Images/Search-Items-3.png" alt="Item">
+                    </div>
+
+                </div>
+                <div class="item-individual">
+                    <div class="item-img">
+                        <img src="./Images/Search-Items-4.png" alt="Item">
+                    </div>
+
+                </div>
+                <div class="item-individual">
+                    <div class="item-img">
+                        <img src="./Images/Search-Items-5.png" alt="Item">
+                    </div>
+
+                </div>
+            </div>
+            <div class="banner-offer-txt">
+                <div class="banner-img">
+                    <img src="./Images/Furniture-Pic.png" alt="Banner-Img">
+                </div>
+                <div class="offer-text-img">
+                    <img src="./Images/Special-Offer.png" alt="Offer Text" id="offer-txt">
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="deals-on-furniture">
+        <div class="container">
+            <div class="heading-underline">
+                <h3>Super Deals & Discounts</h3>
+            </div>
+            <div class="items-display">
+                <div class="item-individual" data-name="Stool" data-price="5000"
+                    data-img="./Images/Deals-On-Furniture-1.png" data-offer="14% off">
+                    <div class="item-img">
+                        <img src="./Images/Deals-On-Furniture-1.png" alt="Stool">
+                    </div>
+                    <h4>Stool</h4>
+                    <span class="price">Rp 50,00</span>
+                    <span class="price-offer">14% off</span>
+                </div>
+
+                <div class="item-individual" data-name="Items Table" data-price="10000"
+                    data-img="./Images/Deals-On-Furniture-2.png" data-offer="14% off">
+                    <div class="item-img">
+                        <img src="./Images/Deals-On-Furniture-2.png" alt="Items Table">
+                    </div>
+                    <h4>Items Table</h4>
+                    <span class="price">Rp 10,000</span>
+                    <span class="price-offer">14% off</span>
+                </div>
+
+                <div class="item-individual" data-name="Sitting Swing" data-price="20000"
+                    data-img="./Images/Deals-On-Furniture-3.png" data-offer="14% off">
+                    <div class="item-img">
+                        <img src="./Images/Deals-On-Furniture-3.png" alt="Sitting Swing">
+                    </div>
+                    <h4>Sitting Swing</h4>
+                    <span class="price">Rp 20,000</span>
+                    <span class="price-offer">14% off</span>
+                </div>
+
+                <div class="item-individual" data-name="Flower vase stand" data-price="30000"
+                    data-img="./Images/Deals-On-Furniture-4.png" data-offer="14% off">
+                    <div class="item-img">
+                        <img src="./Images/Deals-On-Furniture-4.png" alt="Flower vase stand">
+                    </div>
+                    <h4>Flower vase stand</h4>
+                    <span class="price">Rp 30,000</span>
+                    <span class="price-offer">14% off</span>
+                </div>
+
+                <div class="item-individual" data-name="Sofa Set" data-price="70000"
+                    data-img="./Images/Deals-On-Furniture-5.png" data-offer="14% off">
+                    <div class="item-img">
+                        <img src="./Images/Deals-On-Furniture-5.png" alt="Sofa Set">
+                    </div>
+                    <h4>Sofa Set</h4>
+                    <span class="price">Rp 70,000</span>
+                    <span class="price-offer">14% off</span>
+                </div>
+
+
+
+                <div class="item-individual" data-name="Women Kurta" data-price="5000"
+                    data-img="./Images/Royal-Export-Women-Floral-Printed-Floral-Kurta.webp" data-offer="14% off">
+                    <div class="item-img">
+                        <img src="./Images/Royal-Export-Women-Floral-Printed-Floral-Kurta.webp" alt="Women Kurta">
+                    </div>
+                    <h4>Women Kurta</h4>
+                    <span class="price">Rp 5,000</span>
+                    <span class="price-offer">14% off</span>
+                </div>
+
+                <div class="item-individual" data-name="Men Printed Shirt" data-price="8000"
+                    data-img="./Images/Roadster-Mens-Printed-Casual-Shirt.webp" data-offer="10% off">
+                    <div class="item-img">
+                        <img src="./Images/Roadster-Mens-Printed-Casual-Shirt.webp" alt="Men Printed Shirt">
+                    </div>
+                    <h4>Men Printed Shirt</h4>
+                    <span class="price">Rp 8,000</span>
+                    <span class="price-offer">10% off</span>
+                </div>
+
+                <div class="item-individual" data-name="Men Track Pant" data-price="6000"
+                    data-img="./Images/HRX-by-Hrithik-Roshan-Mes-Mid-Rise-Parachute-Track-Pants.webp"
+                    data-offer="12% off">
+                    <div class="item-img">
+                        <img src="./Images/HRX-by-Hrithik-Roshan-Mes-Mid-Rise-Parachute-Track-Pants.webp"
+                            alt="Men Track Pant">
+                    </div>
+                    <h4>Men Track Pant</h4>
+                    <span class="price">Rp 6,000</span>
+                    <span class="price-offer">12% off</span>
+                </div>
+
+                <div class="item-individual" data-name="Men Casual Shirt" data-price="9000"
+                    data-img="./Images/Mast-Harbour-Mens-Standrad-Opaque-Casual-Shirt.webp" data-offer="15% off">
+                    <div class="item-img">
+                        <img src="./Images/Mast-Harbour-Mens-Standrad-Opaque-Casual-Shirt.webp" alt="Men Casual Shirt">
+                    </div>
+                    <h4>Men Casual Shirt</h4>
+                    <span class="price">Rp 9,000</span>
+                    <span class="price-offer">15% off</span>
+                </div>
+
+                <div class="item-individual" data-name="Women Anarkali Kurta" data-price="12000"
+                    data-img="./Images/Kalini-Floral-Printed-V-Neck-Anarkali-Kurta.webp" data-offer="20% off">
+                    <div class="item-img">
+                        <img src="./Images/Kalini-Floral-Printed-V-Neck-Anarkali-Kurta.webp" alt="Women Anarkali Kurta">
+                    </div>
+                    <h4>Women Anarkali Kurta</h4>
+                    <span class="price">Rp 12,000</span>
+                    <span class="price-offer">20% off</span>
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <!-- <section class="review-your-purchase">
+        <div class="container">
+            <div class="heading-underline">
+                <h3>Review Your Purchase</h3>
+            </div>
+            <div class="review-products">
+                <div class="review-prod-lst">
+                    <div class="review-proc-itm">
+                        <div class="product-img">
+                            <img src="./Images/Google_Pixel_8a.webp" alt="Item">
+                        </div>
+                        <div class="product-details">
+                            <h3>2021 Apple iPad Pro with Apple M1 chip (12.9-inch/32.77 cm, Wi-Fi, 128GB)</h3>
+                            <p>You bought it at the best price</p>
+                            <h3>Rp.5,600,000</h3>
+                        </div>
+                    </div>
+
+                    <div class="review-proc-itm">
+                        <div class="product-img">
+                            <img src="./Images/Redme15.webp" alt="Item">
+                        </div>
+                        <div class="product-details">
+                            <h3>2021 Apple iPad Pro with Apple M1 chip (12.9-inch/32.77 cm, Wi-Fi, 128GB)</h3>
+                            <p>You bought it at the best price</p>
+                            <h3>Rp.5,600,000</h3>
+                        </div>
+                    </div>
+
+                    <div class="review-proc-itm">
+                        <div class="product-img">
+                            <img src="./Images/Applie-Ipad-Trimmed.png" alt="Item">
+                        </div>
+                        <div class="product-details">
+                            <h3>2021 Apple iPad Pro with Apple M1 chip (12.9-inch/32.77 cm, Wi-Fi, 128GB)</h3>
+                            <p>You bought it at the best price</p>
+                            <h3>Rp.5,600,000</h3>
+                        </div>
+                    </div>
+
+                    <div class="review-proc-itm">
+                        <div class="product-img">
+                            <img src="./Images/Vivo_y19e.webp" alt="Item">
+                        </div>
+                        <div class="product-details">
+                            <h3>2021 Apple iPad Pro with Apple M1 chip (12.9-inch/32.77 cm, Wi-Fi, 128GB)</h3>
+                            <p>You bought it at the best price</p>
+                            <h3>Rp.5,600,000</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section> -->
+
+     <footer>
+    <div class="container">
+      <div class="footer-con">
+        <h2><b>Toko</b>Elektrik</h2>
+        <nav>
+          <ul>
+            <li><a href="#" class="footer-link">About-Us</a></li>
+            <li><a href="#" class="footer-link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      const $searchBox = $('#searchBox');
+
+      // Toggle menu
+      $(".menu-toggles").click(function () {
+        $("#nav-menu").slideToggle();
+      });
+
+      // Item click → go to single page
+      $(document).on('click', '.item-individual, .review-proc-itm', function () {
+        const $el = $(this);
+        const name = ($el.data('name') || $el.find('h4').text() || $el.find('.product-details h3').first().text() || '').trim();
+        const price = ($el.data('price') !== undefined ? String($el.data('price')) : $el.find('.price').text() || $el.find('.product-details h3').last().text() || '').trim();
+        const offer = ($el.data('offer') || $el.find('.price-offer').text() || '').trim();
+        const img = ($el.data('img') || $el.find('img').first().attr('src') || '').trim();
+
+        localStorage.setItem('productDetails', JSON.stringify({ name, price, offer, img }));
+        window.location.href = "single-item.html";
+      });
+
+      // Search function
+      $searchBox.on('input', function () {
+        const query = $searchBox.val().toLowerCase().trim();
+        if (!query) {
+          $('#searchResults').remove();
+          $('section, footer').show();
+          return;
+        }
+
+        const allItems = $('.item-individual, .review-proc-itm');
+        const uniqueItems = new Map();
+
+        allItems.each(function () {
+          const $el = $(this);
+          const name = ($el.data('name') || $el.find('h4').text() || $el.find('.product-details h3').first().text() || '').trim();
+          if (!name) return;
+          if (name.toLowerCase().includes(query) && !uniqueItems.has(name.toLowerCase())) {
+            const price = ($el.data('price') !== undefined ? String($el.data('price')) : $el.find('.price').text() || $el.find('.product-details h3').last().text() || '').trim();
+            const offer = ($el.data('offer') || $el.find('.price-offer').text() || '').trim();
+            const img = ($el.data('img') || $el.find('img').first().attr('src') || '').trim();
+            uniqueItems.set(name.toLowerCase(), { name, price, offer, img });
+          }
+        });
+
+        $('#searchResults').remove();
+        $('section, footer').hide();
+
+        const $resSection = $(`
+          <main id="searchResults">
+              <div class="container">
+                  <div class="items-display"></div>
+              </div>
+          </main>
+        `);
+        const itemsDisplay = $resSection.find('.items-display');
+
+        if (uniqueItems.size) {
+          uniqueItems.forEach(item => {
+            itemsDisplay.append(`
+              <div class="item-individual" data-name="${item.name}" data-price="${item.price}" data-offer="${item.offer}" data-img="${item.img}">
+                  <div class="item-img"><img src="${item.img}" alt="${item.name}"></div>
+                  <h4>${item.name}</h4>
+                  <span class="price">${item.price}</span>
+                  <span class="price-offer">${item.offer}</span>
+              </div>
+            `);
+          });
+        } else {
+          itemsDisplay.append('<p class="no-results">No items found.</p>');
+        }
+
+        $('header').after($resSection);
+      });
+
+      // Escape clears search
+      $(document).on('keydown', function (e) {
+        if (e.key === "Escape") {
+          $searchBox.val('');
+          $searchBox.trigger('input');
+        }
+      });
+
+      // Category mapping
+      const categoryMap = {
+        Furniture: ["Stool", "Table", "Swing", "Sofa", "Flower vase"],
+        Electronic: ["Air Fryer", "TV", "Camera", "Keyboard", "Mouse", "Ear", "Watch", "Microphone"],
+        Mobile: ["iPhone", "Mobile", "Headphones", "Ipad", "Pixel", "Redme", "Vivo","Oppo"],
+        Clothing: ["Men", "Women"],
+      };
+
+      function belongsToCategory(name, category) {
+        return categoryMap[category]?.some(keyword =>
+          name.toLowerCase().includes(keyword.toLowerCase())
+        );
+      }
+
+      // Nav click
+      $("header nav ul li a").click(function (e) {
+        const category = $(this).text().trim();
+
+        if (category === "Home") {
+          // reset page
+          window.location.href = "index.html";
+          return;
+        }
+
+        e.preventDefault();
+
+        $("header nav ul li a").removeClass("active");
+        $(this).addClass("active");
+
+        $("section").hide();
+        $("#categoryResults").remove();
+
+        const $resSection = $(`
+          <main id="categoryResults">
+            <div class="container">
+              <div class="heading-underline"><h3>${category} Items</h3></div>
+              <div class="items-display"></div>
+            </div>
+          </main>
+        `);
+
+        $(".item-individual, .review-proc-itm").each(function () {
+          const $el = $(this);
+          const name = ($el.data("name") || $el.find("h4").text() || $el.find(".product-details h3").first().text() || "").trim();
+          const price = ($el.data("price") !== undefined ? String($el.data("price")) : $el.find(".price").text() || $el.find(".product-details h3").last().text() || "").trim();
+          const offer = ($el.data("offer") || $el.find(".price-offer").text() || "").trim();
+          const img = ($el.data("img") || $el.find("img").first().attr("src") || "").trim();
+
+          if (name && belongsToCategory(name, category)) {
+            $resSection.find(".items-display").append(`
+              <div class="item-individual" data-name="${name}" data-price="${price}" data-offer="${offer}" data-img="${img}">
+                <div class="item-img"><img src="${img}" alt="${name}"></div>
+                <h4>${name}</h4>
+                <span class="price">${price}</span>
+                <span class="price-offer">${offer}</span>
+              </div>
+            `);
+          }
+        });
+
+        if ($resSection.find(".item-individual").length === 0) {
+          $resSection.find(".items-display").append("<p class='no-results'>No items found.</p>");
+        }
+
+        $("header").after($resSection);
+      });
+    });
+  </script>
+</body>
+
+</html>

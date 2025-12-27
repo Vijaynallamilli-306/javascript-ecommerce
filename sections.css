@@ -1,0 +1,16 @@
+header,section,footer{
+    background-color: #353030;
+    color: #fff;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section{
+    height: 500px;
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 8px;
+    color: black;
+
+}

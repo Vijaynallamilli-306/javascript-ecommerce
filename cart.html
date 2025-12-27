@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Your Cart</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 🔹 Header */
+    .item-header {
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      border-bottom: 2px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .item-header .brand {
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .item-header a {
+      text-decoration: none;
+      color: #FF9800;
+      font-weight: 500;
+    }
+
+    .cart-icon {
+      font-size: 18px;
+    }
+
+    /* 🔹 Breadcrumb */
+    .breadcrumbs {
+      font-size: 14px;
+      margin: 15px auto;
+      max-width: 1000px;
+      padding: 0 20px;
+      color: #555;
+    }
+
+    .breadcrumbs a {
+      text-decoration: none;
+      color: #FF9800;
+      font-weight: 500;
+    }
+
+    .breadcrumbs a:hover {
+      text-decoration: underline;
+    }
+
+    .breadcrumbs span {
+      color: #333;
+      font-weight: 600;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    table {
+      width: 90%;
+      margin: 0 auto 20px;
+      border-collapse: collapse;
+      background: #fff;
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+      font-size: 15px;
+    }
+
+    img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .totals {
+      margin: 20px auto;
+      font-size: 18px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      border-top: 2px solid #ddd; /* top border */
+    }
+
+    .checkout-btn {
+      background: green;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 15px;
+      font-size: 16px;
+    }
+
+    .checkout-btn:hover {
+      background: darkgreen;
+    }
+
+    .remove-btn {
+      cursor: pointer;
+      color: red;
+      font-weight: bold;
+    }
+
+    /* 🔹 Footer */
+    footer {
+      background: #f1f1f1;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      color: #555;
+      border-top: 2px solid #ddd;
+      margin-top: 40px;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      table,
+      thead,
+      tbody,
+      th,
+      td,
+      tr {
+        display: block;
+      }
+
+      thead {
+        display: none;
+      }
+
+      tbody tr {
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 12px;
+        background: #fff;
+        text-align: center;
+      }
+
+      tbody td {
+        border: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 8px 10px;
+        font-size: 14px;
+      }
+
+      tbody td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 5px;
+        text-align: center;
+      }
+
+      tbody td img {
+        margin-top: 5px;
+        width: 100px;
+        height: 100px;
+      }
+
+      .totals {
+        width: 90%;
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  
+
+  <!-- 🔹 Breadcrumb -->
+  <nav class="breadcrumbs">
+    <a href="index.html">Home</a> › <span>Cart</span>
+  </nav>
+
+  <h1>Your Cart</h1>
+
+  <table id="cartTable">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Offer</th>
+        <th>Total</th>
+        <th>Remove</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <div class="totals">
+    <p>Subtotal: Rp <span id="subtotal">0</span></p>
+    <p>Discount: Rp <span id="discount">0</span></p>
+    <p>Grand Total: Rp <span id="grandTotal">0</span></p>
+    <button class="checkout-btn" onclick="proceedCheckout()">Proceed to Checkout</button>
+  </div>
+
+  <!-- 🔹 Footer -->
+ 
+
+  <script>
+    function loadCart() {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      let tbody = document.querySelector("#cartTable tbody");
+      tbody.innerHTML = "";
+      let subtotal = 0;
+      let discount = 0;
+
+      cart.forEach((item, index) => {
+        let itemTotal = item.price * item.quantity;
+        let itemDiscount = item.offer ? (itemTotal * item.offer / 100) : 0;
+        subtotal += itemTotal;
+        discount += itemDiscount;
+
+        let tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td data-label="Image"><img src="${item.image}" alt="${item.name}"></td>
+          <td data-label="Name">${item.name}</td>
+          <td data-label="Price">Rp ${item.price}</td>
+          <td data-label="Quantity">
+            <input type="number" value="${item.quantity}" min="1" onchange="updateQuantity(${index}, this.value)">
+          </td>
+          <td data-label="Offer">${item.offer ? item.offer + "%" : "0%"}</td>
+          <td data-label="Total">Rp ${itemTotal - itemDiscount}</td>
+          <td data-label="Remove"><span class="remove-btn" onclick="removeItem(${index})">X</span></td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      document.getElementById("subtotal").innerText = subtotal;
+      document.getElementById("discount").innerText = discount;
+      document.getElementById("grandTotal").innerText = subtotal - discount;
+    }
+
+    function updateQuantity(index, newQty) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart[index].quantity = parseInt(newQty);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      loadCart();
+    }
+
+    function removeItem(index) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      loadCart();
+    }
+
+    function proceedCheckout() {
+      alert("Proceeding to checkout...");
+    }
+
+    window.onload = loadCart;
+  </script>
+</body>
+
+</html>
